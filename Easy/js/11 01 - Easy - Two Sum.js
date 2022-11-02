@@ -37,17 +37,79 @@ Only one valid answer exists.
 
 //  My Solution 
 
-function century(year) {
-  return year % 100 ? (year - (year % 100)) / 100 + 1 : year / 100;
+// /**
+//  * @param {number[]} nums
+//  * @param {number} target
+//  * @return {number[]}
+//  */
+ function twoSum(nums, target) {
+  let res = [];
+  let myArr = nums.map( e => e = target - e )
+                  .filter( e => nums.includes(e) );
+  
+  for ( let i = 0; i < myArr.length; i++){
+      let total = myArr[i];
+      for ( let j = 0; j < myArr.length; j++){
+          if ( j != i ){
+              total += myArr[j];
+              if ( total != target ){
+                  total = myArr[i];
+              }
+              if ( total == target ){
+                  res.push( nums.indexOf( myArr[i]) );
+                  res.push( nums.lastIndexOf( myArr[j]) );        
+              }
+          }
+      }
+  }
+
+  return res.slice(0,2);
+};
+
+//  Leetcode - Brute Force
+
+function twoSum( nums, target ){
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+        if (nums[j] == target - nums[i]) {
+            return [i, j];
+        }
+    }
+  }
 }
 
-//  Codewars - Most Similar to Mine
+/*  
+  Leetcode - One Pass Hash Table
 
-function century(year){
-  return year % 100 ? parseInt( year / 100 ) + 1 : parseInt( year / 100 );
-}
+While we are iterating and inserting elements into the hash table, 
+we also look back to check if current element's complement already 
+exists in the hash table. 
 
-//  Codewars - Best Solution
-function century(year){
-  return Math.ceil(year/100);
-}
+If it exists, we have found a solution and return the indices immediately.
+
+*/
+
+function twoSums(nums, target) {
+
+    let myObj = {};
+    for (let i = 0; i < nums.length; i++) {
+
+        let complement = target - nums[i];
+
+        //  if complement is true in myObj @ i
+        //  Object {
+        //      'key1': value1,
+        //      'key2': value2              
+        //  }
+        //  give value of myObj[complement] == index 
+        if ( Object.hasOwn(myObj, complement) ){  
+            return [ myObj[complement] , i ]    
+        }
+        
+        //  Populate myObj until complement is detected as
+        //  nums[i]: index
+        //
+        //  index here will be i-1 because this will be short-circuited
+        myObj[nums[i]] = myObj[nums[i]] || i;
+    }
+};
