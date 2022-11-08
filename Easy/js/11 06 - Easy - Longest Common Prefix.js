@@ -51,3 +51,21 @@ Explanation: There is no common prefix among the input strings.
   }
   return res;
 };
+
+//  Leetcode - Shortest Runtime
+
+let longestCommonPrefix = function(strs) {
+    let string = ""
+    let n = strs.length 
+    let x = Math.min(...strs.map( e => e.length ))
+
+    for( let i = 0; i < x; i++ ){
+        let char = strs[0][i]
+        if(strs.every( e => e[i]===char )){
+            string += char;
+        }else{
+            break;
+        }
+    }
+    return string;
+};
