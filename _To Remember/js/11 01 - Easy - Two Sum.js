@@ -35,6 +35,13 @@ Only one valid answer exists.
 
 */
 
+/*  Practiced on 11/28 
+    Re-Did LeetCode - Fastest Runtime
+        Understand differentiation between using Array.includes() vs 'in' operator
+            includes checks array if value exist
+            in checks if key exists
+    Re-did Leetcode - Lowest Memory == Brute force method I know how to do
+*/
 //  My Solution 
 
 // /**
@@ -66,7 +73,24 @@ Only one valid answer exists.
   return res.slice(0,2);
 };
 
-//  Leetcode - Brute Force
+//  LeetCode - Fastest Runtime
+
+function twoSum( nums, target ){
+    let myObj = {};
+
+    for ( let i = 0; i < nums.length; i++ ){
+        let first = nums[i],
+            sec = target - nums[i];
+
+        if ( sec in myObj ){
+            return [ myObj[sec], i ];
+        }
+
+        myObj[first] = i;    
+    }
+}
+
+//  Leetcode - Lowest Memory Usage
 
 function twoSum( nums, target ){
   for (let i = 0; i < nums.length; i++) {
