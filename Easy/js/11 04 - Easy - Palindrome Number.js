@@ -38,7 +38,7 @@ Follow up: Could you solve it without converting the integer to a string?
 
 function isPalindrome(x){
     
-    return x.toString().split('').reverse().join() === x.toString();;
+  return x.toString().split('').reverse().join('') === x.toString();
 }
 
 /*  
