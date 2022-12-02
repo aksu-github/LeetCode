@@ -10,6 +10,12 @@ You must write an algorithm with O(log n) runtime complexity.
 
 */
 
+/*  Practiced on 12/1
+    Re-Did Using Iterative - Faster Runtime
+
+    Re-did Leetcode - Lowest Runtime
+*/
+
 //  My Solution 
 
 /*
