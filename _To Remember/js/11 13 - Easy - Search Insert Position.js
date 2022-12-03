@@ -12,11 +12,15 @@ You must write an algorithm with O(log n) runtime complexity.
 
 /*  Practiced on 12/1
     Re-Did Using Iterative - Faster Runtime
-
-    Re-did Leetcode - Lowest Runtime
 */
 
-//  My Solution 
+/*  Practiced on 12/2
+    Learned How Binary Search Work
+
+    Understood how to code binary search
+*/
+
+//  My Solution - Iterative
 
 /*
  * @param {number[]} nums
@@ -35,6 +39,26 @@ You must write an algorithm with O(log n) runtime complexity.
         return c;
     };
 };
+
+//  My Solution - Binary Search 
+
+var searchInsert = function(nums, target){
+    let l = 0;
+    let r = nums.length - 1
+
+    while (l <= r) {
+        mid = Math.floor( (l + r) / 2 )
+        if ( nums[mid] < target ) {
+            l = mid + 1;
+        }
+        else if (nums[mid] > target){
+            r = mid - 1;
+        } else {
+            return mid;    
+        }
+    }
+    return mid+1;
+}
 
 //  Leetcode - Fastest Runtime (Binary Search)
 
