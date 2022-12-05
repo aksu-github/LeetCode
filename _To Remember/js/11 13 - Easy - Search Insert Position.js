@@ -40,7 +40,7 @@ You must write an algorithm with O(log n) runtime complexity.
     };
 };
 
-//  My Solution - Binary Search 
+//  General Format of how a Binary Search Logic Looks
 
 var searchInsert = function(nums, target){
     let l = 0;
@@ -57,7 +57,7 @@ var searchInsert = function(nums, target){
             return mid;    
         }
     }
-    return mid+1;
+    return l;
 }
 
 //  Leetcode - Fastest Runtime (Binary Search)

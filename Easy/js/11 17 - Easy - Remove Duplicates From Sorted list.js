@@ -8,6 +8,12 @@ Return the linked list sorted as well.
 
 */
 
+/*  Practiced on 12/4
+    Since I somewhat understand linked list now, this has become easier.
+
+    Re-did LeetCode Fastest Run-time method
+*/
+
 //  My Solution 
 
 /**
@@ -21,32 +27,32 @@ Return the linked list sorted as well.
  * @param {ListNode} head
  * @return {ListNode}
  */
- var deleteDuplicates = function(head) {
-    
-  let temp = head;
-  while ( temp ){
-      if ( temp.next !== null && temp.val == temp.next.val ){
-          temp.next = temp.next.next;
-      } else {
-          temp = temp.next;
-      }
-  }
-
-  return head;
-};
-
-//  LeetCode - Fastest Runtime
-
 var deleteDuplicates = function(head) {
-  if(!head) return head
-  var cur = head
+    
+    let temp = head;
+    while ( temp ){
+        if ( temp.next !== null && temp.val == temp.next.val ){
+            temp.next = temp.next.next;
+        } else {
+            temp = temp.next;
+        }
+    }
   
-  while(cur!=null && cur.next != null) {
-      if(cur.next.val === cur.val) {
-          cur.next = cur.next.next
-      }else {
-          cur = cur.next
-      }
+    return head;
+  };
+  
+  //  LeetCode - Fastest Runtime
+  
+  var deleteDuplicates = function(head) {
+    if(!head) return head
+    var cur = head
+    
+    while(cur!=null && cur.next != null) {
+        if(cur.next.val === cur.val) {
+            cur.next = cur.next.next
+        }else {
+            cur = cur.next
+        }
+    }
+    return head
   }
-  return head
-}

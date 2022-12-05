@@ -8,6 +8,12 @@ Return the linked list sorted as well.
 
 */
 
+/*  Practiced on 12/4
+    Since I somewhat understand linked list now, this has become easier.
+
+    Re-did LeetCode Fastest Run-time method
+*/
+
 //  My Solution 
 
 /**
