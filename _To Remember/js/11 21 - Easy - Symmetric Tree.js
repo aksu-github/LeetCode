@@ -7,6 +7,10 @@ Two binary trees are considered the same if they are structurally identical, and
 
 */
 
+/*  Practiced on 12/
+    Redid Fastest Runtime
+*/
+
 //  My Solution 
 
 /*
@@ -23,7 +27,7 @@ Two binary trees are considered the same if they are structurally identical, and
  * @return {boolean}
  */
 
-//  I have not been getting these binary trees. Need to study it tomorrow in depth by tracing manually.
+
 
 //  LeetCode - Lowest Memory
 

@@ -7,6 +7,10 @@ Two binary trees are considered the same if they are structurally identical, and
 
 */
 
+/*  Practiced on 12/
+    Redid Fastest Runtime
+*/
+
 //  My Solution 
 
 /*
@@ -23,39 +27,39 @@ Two binary trees are considered the same if they are structurally identical, and
  * @return {boolean}
  */
 
-//  I have not been getting these binary trees. Need to study it tomorrow in depth by tracing manually.
+
 
 //  LeetCode - Lowest Memory
 
 var isSymmetric = function(root) {
-    if(root == null) return true
-    return dfs(root.left, root.right);
-  };
+  if(root == null) return true
+  return dfs(root.left, root.right);
+};
+
+function dfs(x, y){
+  if( x == null && y == null) return true;
+  if( x== null ||  y == null) return false;
+  if(x.val !== y.val) return false;
   
-  function dfs(x, y){
-    if( x == null && y == null) return true;
-    if( x== null ||  y == null) return false;
-    if(x.val !== y.val) return false;
-    
-    return dfs(x.left, y.right) && dfs(x.right, y.left)
-  }
+  return dfs(x.left, y.right) && dfs(x.right, y.left)
+}
 
 //  LeetCode - Fastest Runtime
 
 var isSymmetric = function(root) {
-    
-    function chk(left, right) {
-        if (!left && !right) return true;
-        if (!left || !right) return false;
-        
-        let eq1 = chk(left.left, right.right),
-            eq2 = chk(left.right, right.left);
-        
-        return left.val === right.val && eq1 && eq2;
-    }
-    
-    return chk(root, root);
-    
+  
+  function chk(left, right) {
+      if (!left && !right) return true;
+      if (!left || !right) return false;
+      
+      let eq1 = chk(left.left, right.right),
+          eq2 = chk(left.right, right.left);
+      
+      return left.val === right.val && eq1 && eq2;
+  }
+  
+  return chk(root, root);
+  
 };
 
 
