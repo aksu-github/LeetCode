@@ -6,6 +6,10 @@ height-balanced binary search tree.
 
 */
 
+/*  Practiced on 12/11
+    
+*/
+
 //  My Solution 
 
 //  Yeah, no. This did not feel easy. I just brute forced this one.
