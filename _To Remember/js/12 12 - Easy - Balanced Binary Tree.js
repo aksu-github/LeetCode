@@ -1,15 +1,18 @@
 /*
 Instruction:
 
-Given a binary tree, determine if it is height-balanced
-.
+Given a binary tree, determine if it is height-balanced.
 
 */
+
+// 12/12 - Will need to practice this one later.
+
 
 
 //  My Solution 
 
 //  Sort of semi-hard. Had to think thru a lot even though I already knew how to do a depth checker.
+
 
 /**
  * Definition for a binary tree node.
@@ -39,3 +42,45 @@ var isBalanced = function(root) {
             isBalanced( root.left ) && 
             isBalanced( root.right );
 };
+
+//  LeetCode - Fastest Runtime
+
+var isBalanced = function(root) {
+    return checkBalanced(root) !== -1;
+};
+
+var checkBalanced = function(root) {
+    if (root === null) return 0;
+    
+    let left = checkBalanced(root.left);
+    if (left === -1) return -1;
+    let right = checkBalanced(root.right);
+    if (right === -1) return -1;
+    
+    if (Math.abs(left - right) > 1) return -1;
+        
+    return 1 + Math.max(left, right);
+}
+
+//  LeetCode - Lowest Memory Usage
+
+var isBalanced = function(root) {
+    return dfs(root)==Infinity?false:true;
+};
+
+
+
+const dfs = (node) => {
+    if(!node){
+       return 0
+    }
+    
+    const left = 1 + dfs(node.left)
+    const right = 1 + dfs(node.right)
+    
+    if(Math.abs(left - right) > 1){
+       return Infinity
+    }
+    
+    return Math.max(left, right)
+}
