@@ -5,7 +5,9 @@ Given a binary tree, determine if it is height-balanced.
 
 */
 
-// 12/12 - Will need to practice this one later.
+/*  Practiced on 12/14
+    My Solution
+*/
 
 
 
