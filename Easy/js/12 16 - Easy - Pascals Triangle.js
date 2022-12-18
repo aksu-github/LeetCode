@@ -5,6 +5,10 @@ Given an integer numRows, return the first numRows of Pascal's triangle.
 
 */
 
+/*  Practiced on 12/17
+    Fastest Runtime Solution
+*/
+
 //  My Solution 
 
 /*
