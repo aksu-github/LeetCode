@@ -10,6 +10,10 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 
 */
 
+/*  Practiced on 12/27
+    New Solution that uses 2 'pointers'
+*/
+
 //  My Solution 
 
 /*
@@ -31,6 +35,26 @@ var maxProfit = function(prices) {
       }
       return res;
 }
+
+//  My Solution - Newer
+
+var maxProfit = function(prices) {
+    let res = 0,
+        buy = 0,
+        sell = 1;
+    
+    while ( sell < prices.length ){
+        let profit = prices[sell] - prices[buy];
+
+        if ( profit <= 0 ){
+            buy = sell;
+        } else {
+            res = Math.max( res , profit);
+        }
+        sell++;
+    }
+    return res;
+};
 
 //  LeetCode - Fastest Runtime
 
