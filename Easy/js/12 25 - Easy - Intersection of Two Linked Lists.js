@@ -10,6 +10,10 @@ If the two linked lists have no intersection at all, return null.
 
 //  My Solution - Fastest Runtime + Lowest Memory Usage
 
+/*  Practiced on 1/2
+    Traced by hand to understand what is going on
+*/
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -32,8 +36,8 @@ var getIntersectionNode = function(headA, headB) {
       pB = headB;
 
   while ( pA != pB ){
-      pA = pA ? pA.next : headB;
-      pB = pB ? pB.next : headA;
+      pA = !pA ? headB : pA.next;
+      pB = !pB ? headA : pB.next;
   }
 
   return pA;
