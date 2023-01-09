@@ -12,7 +12,9 @@ And then read line by line: "PAHNAPLSIIGYIR"
 
 */
 
-
+/*  Practiced on 1/8
+    LeetCode - Fastest Runtime
+*/
 
 //  LeetCode
 
@@ -57,21 +59,23 @@ var convert = function(s, numRows) {
 //  LeetCode - Fastest Runtime
 
 var convert = function(s, numRows) {
-    if (numRows === 1) {
-    return s;
+  if ( numRows == 1 ){
+      return s;
   }
 
-  const rows = new Array(numRows).fill("");
-  let currRow = 0;
-  let goingDown = false;
+  const ROWS = new Array(numRows).fill('');
+  let currentRow = 0,
+      goDown = false;
+  
+  for ( let char of s){
+      ROWS[currentRow] += char;
 
-  for (const c of s) {
-    rows[currRow] += c;
-    if (currRow === 0 || currRow === numRows - 1) {
-      goingDown = !goingDown;
-    }
-    currRow += goingDown ? 1 : -1;
+      if ( currentRow == 0 || currentRow == numRows - 1 ){
+          goDown = !goDown;
+      }
+
+      currentRow += goDown ? 1 : -1;
   }
 
-  return rows.join("");
+  return ROWS.join('');
 };
