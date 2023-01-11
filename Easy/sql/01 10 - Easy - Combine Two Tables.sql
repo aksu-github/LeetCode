@@ -43,3 +43,6 @@ addressId = 1 contains information about the address of personId = 2.
 SELECT Person.FirstName, Person.LastName, Address.City, Address.State 
   from Person LEFT JOIN Address on Person.PersonId = Address.PersonId;
 
+/* LeetCode - Fastest Runtime */
+
+select a.firstName, a.lastName, b.city, b.state from Person as a left join Address as b on a.personId=b.personId
