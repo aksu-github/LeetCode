@@ -16,6 +16,10 @@ And then read line by line: "PAHNAPLSIIGYIR"
     LeetCode - Fastest Runtime
 */
 
+/*  Practiced on 1/11
+    LeetCode - Fastest Runtime
+*/
+
 //  LeetCode
 
 /*
@@ -37,45 +41,45 @@ const convert = (s, numRows) => {
     // 4. Join the row strings in the array together
     return rows.join('');
   };
-
-//  LeetCode - Lowest Memory Usage
-
-var convert = function(s, numRows) {
+  
+  //  LeetCode - Lowest Memory Usage
+  
+  var convert = function(s, numRows) {
     if (numRows === 1 || s.length < numRows) return s;
     let row = 0
     let reverse = false
     let array = Array(numRows).fill("")
-
+  
     for(let i = 0; i < s.length; i++) {
         array[row] += s[i]
-
+  
         reverse ? row-- : row++;
         if (row === numRows - 1 || row === 0) reverse = !reverse;
     }
-
+  
     return array.join("")
-};
-
-//  LeetCode - Fastest Runtime
-
-var convert = function(s, numRows) {
+  };
+  
+  //  LeetCode - Fastest Runtime
+  
+  var convert = function(s, numRows) {
   if ( numRows == 1 ){
       return s;
   }
-
+  
   const ROWS = new Array(numRows).fill('');
   let currentRow = 0,
       goDown = false;
   
   for ( let char of s){
       ROWS[currentRow] += char;
-
+  
       if ( currentRow == 0 || currentRow == numRows - 1 ){
           goDown = !goDown;
       }
-
+  
       currentRow += goDown ? 1 : -1;
   }
-
+  
   return ROWS.join('');
-};
+  };
