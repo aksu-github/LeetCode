@@ -38,6 +38,10 @@ addressId = 1 contains information about the address of personId = 2.
 
 */
 
+/*  Practiced on 1/12
+    A Solution
+*/
+
 /* A Solution */
 
 SELECT Person.FirstName, Person.LastName, Address.City, Address.State 
