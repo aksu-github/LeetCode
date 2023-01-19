@@ -14,6 +14,10 @@ Notice that you may not slant the container.
     2 Pointer Solution
 */
 
+/*  Practiced on 1/16
+    2 Pointer Solution
+*/
+
 //  2 Pointer Solution
 
 /*
