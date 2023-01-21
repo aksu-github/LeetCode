@@ -22,7 +22,20 @@ Given n pairs of parentheses, write a function to generate all combinations of w
 
 */
 
-/*  Practiced on 
+/*  Practiced on 1/20
+    Trying to manually trace
+
+    Backtracking and keep track of number of opening and closing brackets have been used either by incrementing or decrementing.
+    You know you can only start with an opening: (
+    At this point, you have 2 options: add more ( or now you can add ) to close it.
+    When can you add more (? Whenever you haven't used up all the n openings. n pairs = n openings and n closings.
+    When can you add more )? Whenever you have more openings than closings.
+
+    '('->'()'->'()('->'()()'->'()()('=>'()()()'
+                    ->'()(('->'()(()'=>'()(())'
+       ->'(('->'(()'->'(()('->'(()()'=>'(())())'
+                    ->'(())'->'(())('=>'(())()'
+             ->'((('=>'((()))'
 
 */
 
