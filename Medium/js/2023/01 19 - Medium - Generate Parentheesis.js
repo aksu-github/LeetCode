@@ -39,6 +39,10 @@ Given n pairs of parentheses, write a function to generate all combinations of w
 
 */
 
+/*  Practiced on 1/21
+
+*/
+
 //  A Solution
 
 var generateParenthesis = function(n) {
