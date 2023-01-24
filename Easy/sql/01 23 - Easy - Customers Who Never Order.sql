@@ -48,4 +48,15 @@ WHERE
     );
 
 
+/* LeetCode - Fastest Runtime */
+
+/*
+# select name as Customers from customers as c, orders as o
+# where c.id != o.customerId
+# group by name
+# having count(name)>1;
+*/
+select name Customers from Customers
+where id not in (select customerId from Orders)
+
 
