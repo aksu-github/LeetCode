@@ -5,7 +5,8 @@ Reverse bits of a given 32 bits unsigned integer.
 
 */
 
-/*  
+/*  Practice 1/25
+    Bitwise Operator Only - Only one I can understand
 
 */
 
