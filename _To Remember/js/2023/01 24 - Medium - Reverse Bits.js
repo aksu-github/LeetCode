@@ -7,7 +7,10 @@ Reverse bits of a given 32 bits unsigned integer.
 
 /*  Practice 1/25
     Bitwise Operator Only - Only one I can understand
+*/
 
+/*  Practice 1/26
+    Bitwise Operator Only - Only one I can understand
 */
 
 //  A Solution
@@ -50,11 +53,20 @@ function reverseBits(n){
 //  LeetCode - Fastest Runtime
 
 var reverseBits = function(n) {
+
+  // Convert n into 32 bit by right shifting 0
+  // Convert to string
   let binaryNum = (n >>> 0).toString(2);
+
+  //  Reverse
   let reversedBinary = binaryNum.split("").reverse("").join("");
+
+  //  If reverse binary is not 32 bit, add 0 at end until 32 bit
   if(reversedBinary.length <32){
       reversedBinary = reversedBinary + "0".repeat(32-reversedBinary.length)
   }
+
+  //  parseInt reverse
   let reversedNum = parseInt(String(reversedBinary), 2);
   return reversedNum
 };
