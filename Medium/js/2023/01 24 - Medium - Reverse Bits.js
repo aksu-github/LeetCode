@@ -13,6 +13,11 @@ Reverse bits of a given 32 bits unsigned integer.
     Bitwise Operator Only - Only one I can understand
 */
 
+/*  Practice 1/27
+    Fastest Runtime
+*/
+
+
 //  A Solution
 
 var reverseBits = function(n) {
@@ -69,6 +74,16 @@ var reverseBits = function(n) {
   //  parseInt reverse
   let reversedNum = parseInt(String(reversedBinary), 2);
   return reversedNum
+};
+
+var reverseBits = function(n) {
+  let reverse = (n>>>0).toString(2).split('').reverse().join('');
+
+  if ( reverse.length < 32 ){
+      reverse = reverse + '0'.repeat(32 - reverse.length )
+  }
+
+  return parseInt(reverse, 2)
 };
 
 //  LeetCode - Lowest Memory Usage
