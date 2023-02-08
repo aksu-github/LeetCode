@@ -7,9 +7,15 @@ A leaf is a node with no children.
 
 */
 
-/*  
+/*  Practice on 2/6
+    My Solution
+    Lowest Memory
+    Fastest Runtime
 */
 
+/*  Practice on 2/7
+    Fastest Runtime
+*/
 
 //  My Solution
 
@@ -67,9 +73,9 @@ var binaryTreePaths = function(root) {
     var binaryTreePathsHelper = function(root ,str) {
         if(!root.left && !root.right)
             arr.push(str)
-            if(root.left )
+        if(root.left )
                 binaryTreePathsHelper(root.left, `${str}->${root.left.val}`)
-            if(root.right )
+        if(root.right )
                 binaryTreePathsHelper(root.right, `${str}->${root.right.val}`)
     }
     binaryTreePathsHelper(root, `${root.val}`)
