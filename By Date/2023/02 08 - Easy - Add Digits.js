@@ -5,7 +5,8 @@ Given an integer num, repeatedly add all its digits until the result has only on
 
 */
 
-/*  
+/*  Practice 2/9
+    Fastest Runtime + Lowest Memory -- Traced manually why % 9 works
 */
 
 
