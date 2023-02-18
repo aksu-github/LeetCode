@@ -28,10 +28,11 @@ Explanation:
 4 --> 100
 5 --> 101
 
+*/ 
+
+/*  Practice on 2/17
+    Bitwise solution
 */
-
-/*  
-
 
 //  My Solution - Fastest Runtime + Lower Memory Usage
 
