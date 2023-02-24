@@ -20,7 +20,8 @@ Explanation: [4,9] is also accepted.
 
 */ 
 
-/*  
+/*  Practice 2/24
+    The reduce version ( Fast Runtime + Low Memory Usage)
 */
 
 //  My Solution
@@ -31,38 +32,38 @@ Explanation: [4,9] is also accepted.
 * @return {number[]}
 */
 var intersection = function(nums1, nums2) {
-   let mySet = new Set(nums1);
-
-   return [...new Set(nums2.filter( e => mySet.has(e)))];
-};
-
-//  LeetCode - Fastest Runtime
-
-var intersection = function(nums1, nums2) {
-    let set1 = new Set(nums1);
-    let arr1 = [...set1]
-
-    let set2 = new Set(nums2);
-    let arr2 = [...set2];
-
-    let ans = [];
-    for(let i=0;i<arr1.length;i++){
-        if(set2.has(arr1[i])){
-            ans.push(arr1[i]);
-        }
-
-    }
-    return ans;
-};
-
-//  LeetCode - One of Lowest Memory Usage
-
-var intersection = function(nums1, nums2) {
-    return nums1.reduce((acc, item) => {
-        if (nums2.includes(item) && !acc.includes(item)) {
-            acc.push(item);
-        }
-
-        return acc;
-    }, []);
-};
+    let mySet = new Set(nums1);
+ 
+    return [...new Set(nums2.filter( e => mySet.has(e)))];
+ };
+ 
+ //  LeetCode - Fastest Runtime
+ 
+ var intersection = function(nums1, nums2) {
+     let set1 = new Set(nums1);
+     let arr1 = [...set1]
+ 
+     let set2 = new Set(nums2);
+     let arr2 = [...set2];
+ 
+     let ans = [];
+     for(let i=0;i<arr1.length;i++){
+         if(set2.has(arr1[i])){
+             ans.push(arr1[i]);
+         }
+ 
+     }
+     return ans;
+ };
+ 
+ //  LeetCode - One of Lowest Memory Usage + Faster Runtimes
+ 
+ var intersection = function(nums1, nums2) {
+     return nums1.reduce((acc, item) => {
+         if (nums2.includes(item) && !acc.includes(item)) {
+             acc.push(item);
+         }
+ 
+         return acc;
+     }, []);
+ };

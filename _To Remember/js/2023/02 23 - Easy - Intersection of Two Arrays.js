@@ -8,7 +8,6 @@ Each element in the result must be unique and you may return the result in any o
  
 
 Example 1:
-
 Input: nums1 = [1,2,2,1], nums2 = [2,2]
 Output: [2]
 
@@ -20,7 +19,8 @@ Explanation: [4,9] is also accepted.
 
 */ 
 
-/*  
+/*  Practice 2/24
+    The reduce version ( Fast Runtime + Low Memory Usage)
 */
 
 //  My Solution
@@ -55,7 +55,7 @@ var intersection = function(nums1, nums2) {
     return ans;
 };
 
-//  LeetCode - One of Lowest Memory Usage
+//  LeetCode - One of Lowest Memory Usage + Faster Runtimes
 
 var intersection = function(nums1, nums2) {
     return nums1.reduce((acc, item) => {
