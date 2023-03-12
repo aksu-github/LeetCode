@@ -22,7 +22,12 @@ Output: []
 
 */ 
 
-/*  Practice Tracing Fastest Runtime + Lowest Memory Usage
+/*  03/10
+    Practice Tracing Fastest Runtime + Lowest Memory Usage
+*/
+
+/*  03/11
+    Practice Tracing Fastest Runtime + Lowest Memory Usage
 */
 
 //  LeetCode 
@@ -52,21 +57,24 @@ var combinationSum = function(candidates, target) {
 //  LeetCode - Fastest Runtime + Lowest Memory Usage
 
 var combinationSum = function(candidates, target) {
-    let result = [];
-    let slate = [];
-    candidates.sort((a,b) => a-b);
-    const dfs = (i, candidates, target, slate) => {
-        if(target < 0) return;
-        if(target === 0){
-            result.push([...slate])
+    let res = [];
+    
+    candidates.sort((a,b) => a - b);
+
+    const dfs = (index, arrC, val, arrPath) => {
+        if( val < 0 ){
             return;
         }
-        for(let j=i; j<candidates.length; j++){
-            slate.push(candidates[j]);
-            dfs(j, candidates, target - candidates[j], slate)
-            slate.pop();
+        if ( val === 0 ){
+            res.push([...arrPath]);
+            return;
+        }
+        for ( let i = index; i < arrC.length; i++){
+            arrPath.push(arrC[i]);
+            dfs(i, candidates, val - arrC[i], arrPath);
+            arrPath.pop();
         }
     }
-    dfs(0, candidates, target, slate)
-    return result;
+    dfs(0, candidates, target, []);
+    return res;
 };
