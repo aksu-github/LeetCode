@@ -19,7 +19,8 @@ Output:
 
 */ 
 
-/*  
+/*  Practiced on 3/14
+    Traced by Hand, makes sense now
 */
 
 
