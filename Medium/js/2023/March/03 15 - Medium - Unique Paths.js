@@ -5,7 +5,9 @@ Instruction:
 
 */ 
 
-/*  
+/*  Practied on 3/16
+    Traced Fastest Runtime By Hand
+    Lowest Memory Usage is Same as Fastest runtime
 */
 
 
