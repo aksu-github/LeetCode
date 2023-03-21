@@ -18,11 +18,12 @@ Output: [[],[0]]
 
 */ 
 
-/*  
+/*  Practiced on 3/19
+    My Solution, idk why the other two solution have to run their DFS twice
 */
 
 
-//  LeetCode
+//  My Solution
 
 /*
  * @param {number[]} nums
@@ -30,29 +31,29 @@ Output: [[],[0]]
  */
 var subsets = function(nums) {
     
-    let res = [], path = [];
+    let res = [];
     
     
-    var makeSubsetFrom = function( startIndex ){    
+    const dfs = ( index, path ) => {    
         // JS object is passing by referece, so we have to make a copy here
         res.push( [...path] );
         
         //// Base cases aka stop condition:
         // No more element
-        if ( startIndex == nums.length ){
+        if ( index == nums.length ){
             return;
         }
         
         //// General cases
         // Current level, we choouse element on index i
-        for( let i = startIndex ; i < nums.length ; i++){
+        for( let i = index ; i < nums.length ; i++){
             path.push( nums[i] );    // put this element into bag
-            makeSubsetFrom( i+1 );  // make subset from remaining elements
+            dfs( i+1 , path);  // make subset from remaining elements
             path.pop();              // undo selection
         }
     }
     
-    makeSubsetFrom( 0 );
+    dfs( 0 , [] );
     return res;
     
 };
