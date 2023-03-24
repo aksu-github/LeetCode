@@ -19,7 +19,8 @@ const DATA = {
 
 */ 
 
-/*  
+/*  Practied on 3/23
+    Tried tracing
 */
 
 
@@ -29,40 +30,39 @@ const DATA = {
  * @param {string} digits
  * @return {string[]}
  */
-function letterCombinations (digits) {
-    if (digits == "") return []
-
-    const digitToLetters = {
-    2: ["a", "b", "c"],
-    3: ["d", "e", "f"],
-    4: ["g", "h", "i"],
-    5: ["j", "k", "l"],
-    6: ["m", "n", "o"],
-    7: ["p", "q", "r", "s"],
-    8: ["t", "u", "v"],
-    9: ["w", "x", "y", "z"],
+var letterCombinations = function(digits) {
+  if ( !digits ){
+      return [];
   }
 
-  let combinations = []
-  
-  function backtrack(current, index){
-    if (current.length === digits.length){
-    combinations.push(current.join(""))
-    return
-    }
-
-    let letters = digitToLetters[digits[index]]
-    for (let letter of letters){
-    current.push(letter)
-    // Do not use ++index on the backtrack parameter
-    // instead use index+1 because you modify the value
-    // of index variable on the current function,
-    // you can check this behavior using debugger.
-    backtrack(current, index+1)
-    current.pop()
-    }
+  const DATA = {
+  2: ["a", "b", "c"],
+  3: ["d", "e", "f"],
+  4: ["g", "h", "i"],
+  5: ["j", "k", "l"],
+  6: ["m", "n", "o"],
+  7: ["p", "q", "r", "s"],
+  8: ["t", "u", "v"],
+  9: ["w", "x", "y", "z"]
   }
-  backtrack([], 0)
 
-  return combinations
-}
+  let res = [];
+
+  let dfs = (index, path) => {
+      if ( path.length == digits.length ){
+          res.push(path.join(''));
+          return;
+      }
+
+      let letter = DATA[digits[index]];
+      
+      for ( let x of letter){
+          path.push(x);
+          dfs(index+1, path);
+          path.pop();
+      }
+  }
+
+  dfs(0, []);
+  return res;
+};
