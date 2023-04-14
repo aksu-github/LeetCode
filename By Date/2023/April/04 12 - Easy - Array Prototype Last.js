@@ -24,3 +24,12 @@ Explanation: Calling nums.last() should return the last element: 3.
 Array.prototype.last = function() {
     return this.at(-1) ?? -1;
 };
+
+//  LeetCode - Fastest Runtime + Lowest Memory Usage
+
+Array.prototype.last = function() {
+    if ( this.length == 0 ){
+        return -1;
+    }
+    return this[this.length - 1];
+};

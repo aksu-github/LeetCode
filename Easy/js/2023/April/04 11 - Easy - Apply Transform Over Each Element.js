@@ -13,7 +13,7 @@ Please solve it without the built-in Array.map method.
 */
 
 
-//  My Solution
+//  My Solution - Lowest Memory Usage
 
 /*
  * @param {number[]} arr
@@ -26,4 +26,13 @@ var map = function(arr, fn) {
         newArr[i] = fn(arr[i],i);
     }
     return newArr;
+};
+
+//  LeetCode - Fastest Runtime
+
+var map = function(arr, fn) {
+    for(let i =0;i<arr.length;i++){
+        arr[i] = fn(arr[i],i);
+    }
+    return arr;
 };
