@@ -1,7 +1,7 @@
 /*
 Instruction:
 
-xample 1:
+Example 1:
 
 Input: num = 9669
 Output: 9969
