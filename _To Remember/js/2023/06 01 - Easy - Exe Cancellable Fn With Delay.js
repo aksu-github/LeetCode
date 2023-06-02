@@ -27,23 +27,25 @@ Input: fn = (x) => x**2, args = [2], t = 100, cancelTime = 50
 Output: []
 Explanation: fn(2) was never called because cancelTime (50ms) is before the delay time (100ms).
 
-/**
- *  const result = []
- *
- *  const fn = (x) => x * 5
- *  const args = [2], t = 20, cancelT = 50
- *
- *  const log = (...argsArr) => {
- *      result.push(fn(...argsArr))
- *  }
- *       
- *  const cancel = cancellable(fn, args, t);
- *           
- *  setTimeout(() => {
- *     cancel()
- *     console.log(result) // [{"time":20,"returned":10}]
- *  }, cancelT)
- */
+
+
+
+  const result = []
+
+  const fn = (x) => x * 5
+  const args = [2], t = 20, cancelT = 50
+
+  const log = (...argsArr) => {
+      result.push(fn(...argsArr))
+  }
+       
+  const cancel = cancellable(fn, args, t);
+           
+  setTimeout(() => {
+     cancel()
+     console.log(result) // [{"time":20,"returned":10}]
+  }, cancelT)
+ 
 
 */ 
 
